@@ -262,7 +262,7 @@ return [
             'text' => 'Data Produk',
             'url'  => 'admin/produk',
             'icon' => 'fas fa-fw fa-box',
-            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create']
+            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create','regex:@^admin/produk/gambar/[0-9]+$@',]
 
         ],
         [

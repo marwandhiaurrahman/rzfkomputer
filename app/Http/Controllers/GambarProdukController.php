@@ -15,8 +15,8 @@ class GambarProdukController extends Controller
      */
     public function index(Produk $produk)
     {
-        // dd($produk);
-        return view('admin.produk.gambar',compact('produk'));
+        $gambars = GambarProduk::where('produk_id', $produk->id)->get();
+        return view('admin.produk.gambar', compact('produk','gambars'))->with('i', 0);
     }
 
     /**
@@ -35,21 +35,24 @@ class GambarProdukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Produk $produk)
     {
-        request()->validate([
+        $request->validate([
             'name' => 'required',
             'produk_id' => 'required',
-            'gambar' => 'required|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = time().'.'.$request->gambar->getClientOriginalExtension();
+        if (!empty($request->gambar)) {
+            $imageName = $request->gambar->getClientOriginalName();
+            $request->gambar->move(public_path('storage/produk-image'), $imageName);
+        }
+        $input = $request->all();
+        $input['gambar'] = $imageName;
 
-        $request->gambar->move(public_path('images/produk'), $imageName);
+        GambarProduk::create($input);
 
-
-        dd($request->input());
-
+        return redirect()->route('produk.gambar', compact('produk'));
     }
 
     /**
@@ -92,8 +95,9 @@ class GambarProdukController extends Controller
      * @param  \App\Models\GambarProduk  $gambarProduk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GambarProduk $gambarProduk)
+    public function destroy($gambarProduk )
     {
-        //
+        GambarProduk::find($gambarProduk)->delete();
+        return back();
     }
 }
