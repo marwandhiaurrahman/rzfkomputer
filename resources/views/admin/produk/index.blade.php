@@ -48,7 +48,7 @@
                                                 <td>{{ $produk->diskon }}</td>
                                                 <td>{{ $produk->publish }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="bottom" title="Edit Photo"><i
+                                                    <a href="/admin/produk/gambar/{{$produk->id}}" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="bottom" title="Edit Gambar"><i
                                                             class="fas fa-image"></i></a>
                                                     <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="bottom" title="Edit Ukuran"><i
                                                             class="fas fa-pencil-ruler"></i></a>
@@ -82,23 +82,12 @@
     </div>
     <!-- /.row -->
 @endsection
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
 @section('js')
     <!-- DataTables -->
     <script>
         $(function() {
             $('#DataTable').DataTable({
-                "paging": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": true,
-                "responsive": true,
+
             });
         });
     </script>

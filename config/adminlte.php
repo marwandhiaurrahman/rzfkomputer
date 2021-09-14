@@ -256,22 +256,26 @@ return [
             'text' => 'Data Pelanggan',
             'url'  => 'admin/pelanggan',
             'icon' => 'fas fa-fw fa-users',
+            'active' => ['admin/pelanggan', 'regex:@^admin/pelanggan/[0-9]+$@', 'regex:@^admin/pelanggan/[0-9]/edit+$@', 'admin/pelanggan/create']
         ],
         [
             'text' => 'Data Produk',
             'url'  => 'admin/produk',
             'icon' => 'fas fa-fw fa-box',
+            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create']
+
         ],
         [
             'text' => 'Data Kategori',
             'url'  => 'admin/kategori',
             'icon' => 'fas fa-fw fa-file',
+            'active' => ['admin/kategori', 'regex:@^admin/kategori/[0-9]+$@', 'regex:@^admin/kategori/[0-9]/edit+$@', 'admin/kategori/create']
         ],
-        [
-            'text' => 'Data Promo',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-percent',
-        ],
+        // [
+        //     'text' => 'Data Promo',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-percent',
+        // ],
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',

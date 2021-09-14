@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GambarProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +56,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('pelanggan', App\Http\Controllers\PelangganController::class);
     Route::resource('kategori', App\Http\Controllers\KategoriController::class);
     Route::resource('produk', App\Http\Controllers\ProdukController::class);
+    Route::get('produk/gambar/{produk}',[GambarProdukController::class,'index']);
+    Route::post('produk/gambar/store',[GambarProdukController::class,'store'])->name('gambar.store');
 
 
 });
