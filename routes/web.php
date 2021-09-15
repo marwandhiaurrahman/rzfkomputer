@@ -56,7 +56,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('pelanggan', App\Http\Controllers\PelangganController::class);
     Route::resource('kategori', App\Http\Controllers\KategoriController::class);
     Route::resource('produk', App\Http\Controllers\ProdukController::class);
-
+    Route::resource('pemesanan', App\Http\Controllers\PemesananController::class);
+    Route::resource('user', App\Http\Controllers\UserController::class);
 
     Route::get('produk/gambar/{produk}',[GambarProdukController::class,'index'])->name('produk.gambar');
     Route::post('produk/gambar/store/{produk}',[GambarProdukController::class,'store'])->name('gambar.store');

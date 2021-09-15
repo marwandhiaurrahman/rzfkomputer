@@ -328,7 +328,7 @@ return [
         ['header' => 'PENGATURAN'],
         [
             'text' => 'Data User',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/user',
             'icon' => 'fas fa-fw fa-user',
         ],
         // [

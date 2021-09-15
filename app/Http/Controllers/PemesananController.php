@@ -14,7 +14,8 @@ class PemesananController extends Controller
      */
     public function index()
     {
-        //
+        $pemesanans = Pemesanan::latest()->get();
+        return view('admin.pemesanan.index', compact('pemesanans'))->with('i', 0);
     }
 
     /**
