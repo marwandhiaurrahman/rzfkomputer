@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
-use App\Models\WarnaProduk;
+use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 
-class WarnaProdukController extends Controller
+class PemesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Produk $produk)
+    public function index()
     {
-        $warnas = WarnaProduk::where('produk_id', $produk->id)->get();
-        return view('admin.produk.warna', compact('produk', 'warnas'))->with('i', 0);
+        //
     }
 
     /**
@@ -37,22 +35,16 @@ class WarnaProdukController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'produk_id' => 'required',
-        ]);
-
-        WarnaProduk::updateOrCreate($request->only(['name', 'produk_id',]));
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function show(WarnaProduk $warnaProduk)
+    public function show(Pemesanan $pemesanan)
     {
         //
     }
@@ -60,10 +52,10 @@ class WarnaProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(WarnaProduk $warnaProduk)
+    public function edit(Pemesanan $pemesanan)
     {
         //
     }
@@ -72,10 +64,10 @@ class WarnaProdukController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WarnaProduk $warnaProduk)
+    public function update(Request $request, Pemesanan $pemesanan)
     {
         //
     }
@@ -83,13 +75,11 @@ class WarnaProdukController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\Pemesanan  $pemesanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk, $warnaProduk)
+    public function destroy(Pemesanan $pemesanan)
     {
-        $warnaProduk = WarnaProduk::findOrFail($warnaProduk);
-        $warnaProduk->delete();
-        return back();
+        //
     }
 }

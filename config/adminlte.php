@@ -262,7 +262,7 @@ return [
             'text' => 'Data Produk',
             'url'  => 'admin/produk',
             'icon' => 'fas fa-fw fa-box',
-            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create','regex:@^admin/produk/gambar/[0-9]+$@',]
+            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create','regex:@^admin/produk/gambar/[0-9]+$@','regex:@^admin/produk/[0-9]/warna+$@','regex:@^admin/produk/[0-9]/ukuran+$@',]
 
         ],
         [
@@ -321,8 +321,8 @@ return [
         // ],
         ['header' => 'TRANSAKSI'],
         [
-            'text' => 'Data Transaksi',
-            'url'  => 'admin/settings',
+            'text' => 'Data Pemesanan',
+            'url'  => 'admin/pemesanan',
             'icon' => 'fas fa-fw fa-shopping-cart',
         ],
         ['header' => 'PENGATURAN'],

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-use App\Models\WarnaProduk;
+use App\Models\UkuranProduk;
 use Illuminate\Http\Request;
 
-class WarnaProdukController extends Controller
+class UkuranProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class WarnaProdukController extends Controller
      */
     public function index(Produk $produk)
     {
-        $warnas = WarnaProduk::where('produk_id', $produk->id)->get();
-        return view('admin.produk.warna', compact('produk', 'warnas'))->with('i', 0);
+        $ukurans = UkuranProduk::where('produk_id', $produk->id)->get();
+        return view('admin.produk.ukuran', compact('produk', 'ukurans'))->with('i', 0);
     }
 
     /**
@@ -42,17 +42,17 @@ class WarnaProdukController extends Controller
             'produk_id' => 'required',
         ]);
 
-        WarnaProduk::updateOrCreate($request->only(['name', 'produk_id',]));
+        UkuranProduk::updateOrCreate($request->only(['name', 'produk_id',]));
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\UkuranProduk  $ukuranProduk
      * @return \Illuminate\Http\Response
      */
-    public function show(WarnaProduk $warnaProduk)
+    public function show(UkuranProduk $ukuranProduk)
     {
         //
     }
@@ -60,10 +60,10 @@ class WarnaProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\UkuranProduk  $ukuranProduk
      * @return \Illuminate\Http\Response
      */
-    public function edit(WarnaProduk $warnaProduk)
+    public function edit(UkuranProduk $ukuranProduk)
     {
         //
     }
@@ -72,10 +72,10 @@ class WarnaProdukController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\UkuranProduk  $ukuranProduk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, WarnaProduk $warnaProduk)
+    public function update(Request $request, UkuranProduk $ukuranProduk)
     {
         //
     }
@@ -83,13 +83,12 @@ class WarnaProdukController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\WarnaProduk  $warnaProduk
+     * @param  \App\Models\UkuranProduk  $ukuranProduk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk, $warnaProduk)
+    public function destroy($ukuranProduk)
     {
-        $warnaProduk = WarnaProduk::findOrFail($warnaProduk);
-        $warnaProduk->delete();
+        UkuranProduk::findOrFail($ukuranProduk)->delete();
         return back();
     }
 }

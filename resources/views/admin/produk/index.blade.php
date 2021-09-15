@@ -48,9 +48,17 @@
                                                 <td>{{ $produk->diskon }}</td>
                                                 <td>{{ $produk->publish }}</td>
                                                 <td>
-                                                    <a href="/admin/produk/gambar/{{$produk->id}}" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="bottom" title="Edit Gambar"><i
+                                                    <a href="/admin/produk/gambar/{{ $produk->id }}"
+                                                        class="btn btn-xs btn-primary" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Edit Gambar"><i
                                                             class="fas fa-image"></i></a>
-                                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="bottom" title="Edit Warna"><i
+                                                    <a href="{{ route('ukuran.index', $produk->id) }}"
+                                                        class="btn btn-xs btn-primary" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Edit Ukuran"><i
+                                                            class="fas fa-pencil-ruler"></i></a>
+                                                    <a href="{{ route('warna.index', $produk->id) }}"
+                                                        class="btn btn-xs btn-primary" data-toggle="tooltip"
+                                                        data-placement="bottom" title="Edit Warna"><i
                                                             class="fas fa-palette"></i></a>
                                                 </td>
                                                 <td>
