@@ -115,7 +115,7 @@
 
                                     </tfoot>
                                 </table>
-                                <button type="submit" class="btn btn-success col-sm-12">Check Out Pesanan</button>
+                                <button type="submit" class="btn btn-success col-sm-12">Buat Pesanan</button>
 
                             </div>
                         </div>

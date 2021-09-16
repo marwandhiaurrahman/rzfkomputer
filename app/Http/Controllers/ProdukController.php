@@ -44,6 +44,7 @@ class ProdukController extends Controller
             'stok' => 'required',
             'harga' => 'required',
             'kategori_id' => 'required',
+            'diskon' => 'min:0|max:100',
         ]);
 
         Produk::updateOrCreate($request->only(['name', 'ringkasan', 'harga', 'stok', 'kategori_id', 'diskon', 'publish']));
@@ -89,6 +90,7 @@ class ProdukController extends Controller
             'stok' => 'required',
             'harga' => 'required',
             'kategori_id' => 'required',
+            'diskon' => 'min:0|max:100',
         ]);
 
 

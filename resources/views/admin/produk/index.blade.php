@@ -44,8 +44,15 @@
                                                 <td>{{ $produk->name }}</td>
                                                 <td>{{ $produk->kategori->name }}</td>
                                                 <td>{{ $produk->stok }}</td>
-                                                <td>{{ $produk->harga }}</td>
-                                                <td>{{ $produk->diskon }}</td>
+                                                <td>
+                                                    @if ($produk->diskon != 0)
+                                                        <del>{{ money($produk->harga, 'IDR') }}</del><br>
+                                                        {{ money($produk->harga * (1 - $produk->diskon / 100), 'IDR') }}
+                                                    @else
+                                                        {{ money($produk->harga, 'IDR') }}
+                                                    @endif
+                                                </td>
+                                                <td>{{ $produk->diskon }} %</td>
                                                 <td>
                                                     @if ($produk->publish == 1)
                                                         Aktif
