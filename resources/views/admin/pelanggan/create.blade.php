@@ -40,7 +40,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="inputTelepon">No Telepon</label>
                         <div class="col-sm-10 col-md-6 col-lg-4">
-                            {!! Form::number('phone_number', null, ['class' => 'form-control', 'placeholder' => 'Masukkan No Telepon', 'id' => 'inputTelepon', 'required']) !!}
+                            {!! Form::text('phone_number', null, ['class' => 'form-control', 'placeholder' => 'Masukkan No Telepon', 'id' => 'inputTelepon', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group row">

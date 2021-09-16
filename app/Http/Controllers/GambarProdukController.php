@@ -16,7 +16,7 @@ class GambarProdukController extends Controller
     public function index(Produk $produk)
     {
         $gambars = GambarProduk::where('produk_id', $produk->id)->get();
-        return view('admin.produk.gambar', compact('produk','gambars'))->with('i', 0);
+        return view('admin.produk.gambar', compact('produk', 'gambars'))->with('i', 0);
     }
 
     /**
@@ -52,7 +52,7 @@ class GambarProdukController extends Controller
 
         GambarProduk::create($input);
 
-        return redirect()->route('produk.gambar', compact('produk'));
+        return redirect()->route('gambar.index', compact('produk'));
     }
 
     /**
@@ -95,7 +95,7 @@ class GambarProdukController extends Controller
      * @param  \App\Models\GambarProduk  $gambarProduk
      * @return \Illuminate\Http\Response
      */
-    public function destroy($gambarProduk )
+    public function destroy(Produk $produk, $gambarProduk)
     {
         GambarProduk::find($gambarProduk)->delete();
         return back();

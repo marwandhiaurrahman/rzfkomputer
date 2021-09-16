@@ -100,7 +100,7 @@
                                         {{ $gambarProduk->name }}
                                     </td>
                                     <td>
-                                        <form action="{{ route('gambar.destroy', [$gambarProduk]) }}"
+                                        <form action="{{ route('gambar.destroy', [$produk, $gambarProduk->id]) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -132,4 +132,3 @@
         });
     </script>
 @stop
-

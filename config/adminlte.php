@@ -191,7 +191,7 @@ return [
     'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
+    'register_url' => false,
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -262,7 +262,7 @@ return [
             'text' => 'Data Produk',
             'url'  => 'admin/produk',
             'icon' => 'fas fa-fw fa-box',
-            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create','regex:@^admin/produk/gambar/[0-9]+$@','regex:@^admin/produk/[0-9]/warna+$@','regex:@^admin/produk/[0-9]/ukuran+$@',]
+            'active' => ['admin/produk', 'regex:@^admin/produk/[0-9]+$@', 'regex:@^admin/produk/[0-9]/edit+$@', 'admin/produk/create','regex:@^admin/produk/[0-9]/warna+$@','regex:@^admin/produk/[0-9]/ukuran+$@','regex:@^admin/produk/[0-9]/gambar+$@']
 
         ],
         [
@@ -324,12 +324,16 @@ return [
             'text' => 'Data Pemesanan',
             'url'  => 'admin/pemesanan',
             'icon' => 'fas fa-fw fa-shopping-cart',
+            'active' => ['admin/pemesanan', 'regex:@^admin/pemesanan/[0-9]+$@', 'regex:@^admin/pemesanan/[0-9]/edit+$@', 'admin/pemesanan/create']
+
         ],
         ['header' => 'PENGATURAN'],
         [
             'text' => 'Data User',
             'url'  => 'admin/user',
             'icon' => 'fas fa-fw fa-user',
+            'active' => ['admin/user', 'regex:@^admin/user/[0-9]+$@', 'regex:@^admin/user/[0-9]/edit+$@', 'admin/user/create']
+
         ],
         // [
         //     'text'       => 'important',

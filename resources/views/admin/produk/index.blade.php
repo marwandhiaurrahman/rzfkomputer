@@ -46,9 +46,15 @@
                                                 <td>{{ $produk->stok }}</td>
                                                 <td>{{ $produk->harga }}</td>
                                                 <td>{{ $produk->diskon }}</td>
-                                                <td>{{ $produk->publish }}</td>
                                                 <td>
-                                                    <a href="/admin/produk/gambar/{{ $produk->id }}"
+                                                    @if ($produk->publish == 1)
+                                                        Aktif
+                                                    @else
+                                                        Tidak
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('gambar.index', $produk->id) }}"
                                                         class="btn btn-xs btn-primary" data-toggle="tooltip"
                                                         data-placement="bottom" title="Edit Gambar"><i
                                                             class="fas fa-image"></i></a>

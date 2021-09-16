@@ -39,7 +39,7 @@ class PelangganController extends Controller
         request()->validate([
             'name' => 'required',
             'address' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => 'required|numeric',
             'email' => 'required',
         ]);
 
